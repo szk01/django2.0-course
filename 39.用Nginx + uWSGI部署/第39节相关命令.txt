@@ -97,10 +97,21 @@ nginx测试命令：nginx -t
 查看uwsgi进程：ps -aux | grep uwsgi
 正常关闭uwsgi进程：uwsgi --stop /home/mysite_uwsgi/master.pid
 强制关闭全部uwsgi进程：ps -aux | grep uwsgi |awk '{print $2}'|xargs kill -9
-重新加载uwsgi：uwsgi --reload /home/mysite_uwsgi/master.pid
+重新加载uwsgi：uwsgi --reload /root/learngit/uwsgi.pid
+查看uwsgi的报错信息：cat /root/learngit/static/uwsgi.log
+
+
+
 根目录下面的nginx.conf的使用：nginx -c /root/learngit/nginx.conf
 查看端口号的情况：netstat -ntpl
+查看报错信息： cat /usr/local/nginx/logs/error.log
+杀死一个进程： kill -9 pid
 修改配置后重启：nginx -s reload
+
+
+
+
+
 参考文档：
 （Django官网）https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/uwsgi/
 （uwsgi中文）https://uwsgi-docs-zh.readthedocs.io/zh_CN/latest/tutorials/Django_and_nginx.html
